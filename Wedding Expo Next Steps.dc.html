@@ -70,7 +70,7 @@
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#123a8f&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#123a8f&quot;,&quot;#0b2a6f&quot;,&quot;#1c3fbf&quot;,&quot;#12306b&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#e8b02e&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#f5c542&quot;,&quot;#ffd35c&quot;,&quot;#e8b02e&quot;,&quot;#f7dd8a&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;guideUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/buyers-guide.pdf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;embedCalendly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#123a8f&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#123a8f&quot;,&quot;#0b2a6f&quot;,&quot;#1c3fbf&quot;,&quot;#12306b&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#e8b02e&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#f5c542&quot;,&quot;#ffd35c&quot;,&quot;#e8b02e&quot;,&quot;#f7dd8a&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/romanhomesandloans&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;guideUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/buyers-guide.pdf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;embedCalendly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Links&quot;}}">
 class Component extends DCLogic {
   state = { firstName: '' };
 
@@ -94,7 +94,7 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    const cal = (this.props.calendlyUrl || 'https://calendly.com/').trim();
+    const cal = (this.props.calendlyUrl || 'https://calendly.com/romanhomesandloans').trim();
     return {
       nameSuffix: this.state.firstName ? ', ' + this.state.firstName : '',
       bookHref: cal,
