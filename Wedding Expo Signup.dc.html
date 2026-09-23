@@ -82,17 +82,23 @@
 
         <div aria-hidden="true" style="height:1px; background:var(--line);"></div>
 
-        <div style="display:flex; flex-direction:column; gap:7px;">
-          <label for="fullname" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">Full name</label>
-          <input id="fullname" name="fullname" type="text" autocomplete="name" placeholder="First and last name" ref="{{ nameRef }}" onBlur="{{ onBlurName }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
-          <sc-if value="{{ errName }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errName }}</span></sc-if>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:14px;">
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label for="firstname" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">First name</label>
+            <input id="firstname" name="firstname" type="text" autocomplete="given-name" placeholder="First name" ref="{{ firstRef }}" onBlur="{{ onBlurFirst }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
+            <sc-if value="{{ errFirst }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errFirst }}</span></sc-if>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:7px;">
+            <label for="lastname" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">Last name</label>
+            <input id="lastname" name="lastname" type="text" autocomplete="family-name" placeholder="Last name" ref="{{ lastRef }}" onBlur="{{ onBlurLast }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
+            <sc-if value="{{ errLast }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errLast }}</span></sc-if>
+          </div>
         </div>
 
         <div style="display:flex; flex-direction:column; gap:7px;">
-          <label for="address" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">Address</label>
-          <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street, city, state, ZIP" aria-describedby="address-help" ref="{{ addrRef }}" onBlur="{{ onBlurAddress }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
-          <span id="address-help" style="font-size:12.5px; line-height:1.45; color:var(--muted);">Where you live now. It tells us which markets and programs apply.</span>
-          <sc-if value="{{ errAddress }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errAddress }}</span></sc-if>
+          <label for="email" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" ref="{{ emailRef }}" onBlur="{{ onBlurEmail }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
+          <sc-if value="{{ errEmail }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errEmail }}</span></sc-if>
         </div>
 
         <div style="display:flex; flex-direction:column; gap:7px;">
@@ -102,13 +108,11 @@
           <sc-if value="{{ errPhone }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errPhone }}</span></sc-if>
         </div>
 
-        <sc-if value="{{ collectEmail }}">
-          <div style="display:flex; flex-direction:column; gap:7px;">
-            <label for="email" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" placeholder="you@email.com" ref="{{ emailRef }}" onBlur="{{ onBlurEmail }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
-            <sc-if value="{{ errEmail }}"><span role="alert" style="font-size:12.5px; line-height:1.45; color:#a4442f;">{{ errEmail }}</span></sc-if>
-          </div>
-        </sc-if>
+        <div style="display:flex; flex-direction:column; gap:7px;">
+          <label for="address" style="font-size:12.5px; font-weight:600; letter-spacing:0.02em; color:var(--deep);">Address <span style="font-weight:400; color:var(--muted);">(optional)</span></label>
+          <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street, city, state, ZIP" aria-describedby="address-help" ref="{{ addrRef }}" style="height:48px; border:1px solid #dcd3c9; border-radius:9px; padding:0 14px; font-size:16px; background:#fdfbf8; transition:border-color .18s, box-shadow .18s;" style-focus="border-color:var(--deep); box-shadow:0 0 0 3px color-mix(in oklab, var(--deep) 16%, transparent); outline:none; background:#fff;">
+          <span id="address-help" style="font-size:12.5px; line-height:1.45; color:var(--muted);">Helps us match you to local markets and programs. Skip it if you'd rather not say.</span>
+        </div>
 
         <sc-if value="{{ showTenure }}" hint-placeholder-val="{{ true }}">
           <div style="display:flex; flex-direction:column; gap:7px;">
@@ -149,10 +153,11 @@
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3c5a6b&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#3c5a6b&quot;,&quot;#33505f&quot;,&quot;#4a6b7c&quot;,&quot;#2f4854&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#be8568&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#be8568&quot;,&quot;#c89a80&quot;,&quot;#a9714f&quot;,&quot;#d2a18e&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;askTenure&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Form&quot;},&quot;collectEmail&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Form&quot;},&quot;sheetEndpoint&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://script.google.com/macros/s/AKfycbzTMED496R6-P1pzeusWPe7MgtvfMyPHQa5uTAQKudG57TMZx6SozcjPkv-sRzY1NFe/exec&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Form&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3c5a6b&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#3c5a6b&quot;,&quot;#33505f&quot;,&quot;#4a6b7c&quot;,&quot;#2f4854&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#be8568&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#be8568&quot;,&quot;#c89a80&quot;,&quot;#a9714f&quot;,&quot;#d2a18e&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;askTenure&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Form&quot;},&quot;sheetEndpoint&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://script.google.com/macros/s/AKfycbzTMED496R6-P1pzeusWPe7MgtvfMyPHQa5uTAQKudG57TMZx6SozcjPkv-sRzY1NFe/exec&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Form&quot;}}">
 class Component extends DCLogic {
   state = { errors: {}, tenure: '', status: '', submitting: false };
-  nameRef = React.createRef();
+  firstRef = React.createRef();
+  lastRef = React.createRef();
   addrRef = React.createRef();
   phoneRef = React.createRef();
   emailRef = React.createRef();
@@ -195,14 +200,14 @@ class Component extends DCLogic {
 
   checkField(field) {
     const v = {
-      name: this.val(this.nameRef),
-      address: this.val(this.addrRef),
+      first: this.val(this.firstRef),
+      last: this.val(this.lastRef),
       phone: this.val(this.phoneRef),
       email: this.val(this.emailRef)
     };
     let msg = '';
-    if (field === 'name' && v.name && (v.name.length < 2 || v.name.indexOf(' ') === -1)) msg = 'Please enter your first and last name.';
-    if (field === 'address' && v.address && v.address.length < 8) msg = 'Please include street, city, state, and ZIP.';
+    if (field === 'first' && v.first && v.first.length < 2) msg = 'Please enter your first name.';
+    if (field === 'last' && v.last && v.last.length < 2) msg = 'Please enter your last name.';
     if (field === 'phone' && v.phone && v.phone.replace(/\D/g, '').length !== 10) msg = 'Please enter a 10-digit phone number.';
     if (field === 'email' && v.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)) msg = 'Please enter a valid email address.';
     this.setState((s) => {
@@ -216,29 +221,30 @@ class Component extends DCLogic {
     e.preventDefault();
     if (this.state.submitting) return;
     const askTenure = this.props.askTenure !== false;
-    const wantEmail = !!this.props.collectEmail;
-    const name = this.val(this.nameRef);
+    const first = this.val(this.firstRef);
+    const last = this.val(this.lastRef);
     const address = this.val(this.addrRef);
     const phone = this.val(this.phoneRef);
-    const email = wantEmail ? this.val(this.emailRef) : '';
+    const email = this.val(this.emailRef);
     const errors = {};
 
-    if (name.length < 2 || name.indexOf(' ') === -1) errors.name = 'Please enter your first and last name.';
-    if (address.length < 8) errors.address = 'Please include street, city, state, and ZIP.';
+    if (first.length < 2) errors.first = 'Please enter your first name.';
+    if (last.length < 2) errors.last = 'Please enter your last name.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = 'Please enter a valid email address.';
     if (phone.replace(/\D/g, '').length !== 10) errors.phone = 'Please enter a 10-digit phone number.';
-    if (wantEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.email = 'Please enter a valid email address.';
     if (askTenure && !this.state.tenure) errors.tenure = 'Pick one so we know where to start.';
 
     if (Object.keys(errors).length) {
       this.setState({ errors: errors, status: '' });
-      const map = { name: this.nameRef, address: this.addrRef, phone: this.phoneRef, email: this.emailRef };
+      const map = { first: this.firstRef, last: this.lastRef, email: this.emailRef, phone: this.phoneRef };
       const first = map[Object.keys(errors)[0]];
       if (first && first.current) first.current.focus();
       return;
     }
 
     const entry = {
-      name: name, address: address, phone: phone, email: email,
+      name: first + ' ' + last, firstName: first, lastName: last,
+      address: address, phone: phone, email: email,
       tenure: this.state.tenure, at: new Date().toISOString()
     };
 
@@ -264,14 +270,15 @@ class Component extends DCLogic {
   renderVals() {
     const e = this.state.errors;
     return {
-      nameRef: this.nameRef,
+      firstRef: this.firstRef,
+      lastRef: this.lastRef,
       addrRef: this.addrRef,
       phoneRef: this.phoneRef,
       emailRef: this.emailRef,
       onSubmit: (ev) => this.submit(ev),
       onPhoneInput: (ev) => this.formatPhone(ev),
-      onBlurName: () => this.checkField('name'),
-      onBlurAddress: () => this.checkField('address'),
+      onBlurFirst: () => this.checkField('first'),
+      onBlurLast: () => this.checkField('last'),
       onBlurPhone: () => this.checkField('phone'),
       onBlurEmail: () => this.checkField('email'),
       pickOwn: () => this.pick('Own', 0),
@@ -279,13 +286,12 @@ class Component extends DCLogic {
       ownPressed: this.state.tenure === 'Own',
       rentPressed: this.state.tenure === 'Rent',
       tenureChoice: this.state.tenure === 'Own' ? 'I own' : this.state.tenure === 'Rent' ? 'I rent' : '',
-      errName: e.name || '',
-      errAddress: e.address || '',
+      errFirst: e.first || '',
+      errLast: e.last || '',
       errPhone: e.phone || '',
       errEmail: e.email || '',
       errTenure: e.tenure || '',
       showTenure: this.props.askTenure !== false,
-      collectEmail: !!this.props.collectEmail,
       isSubmitting: this.state.submitting,
       statusMsg: this.state.status
     };
