@@ -56,7 +56,7 @@
       <div style="flex:1 1 300px; min-width:0; border-radius:16px; padding:clamp(24px,3vw,36px); background:var(--blush); border:1px solid #e8d4ca; display:flex; flex-direction:column; gap:12px;">
         <h2 style="font-family:'Playfair Display',Georgia,serif; font-size:clamp(21px,2.3vw,27px); font-weight:600; letter-spacing:-0.01em; margin:0; color:var(--deep);">The buyer's guide</h2>
         <p style="margin:0; font-size:15.5px; line-height:1.6; color:var(--ink); max-width:40ch;">Credit, down payments, and the costs that show up at closing, in plain language.</p>
-        <a href="{{ guideHref }}" download="" style="margin-top:auto; align-self:flex-start; display:inline-flex; align-items:center; justify-content:center; height:52px; padding:0 30px; white-space:nowrap; border-radius:999px; background:var(--deep); color:#ffffff; font-size:13.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; transition:transform .12s, box-shadow .18s, background .18s;" style-hover="background:color-mix(in oklab, var(--deep) 86%, #000); box-shadow:0 12px 26px -14px rgba(40,70,90,0.6); color:#ffffff;" style-active="transform:translateY(1px);" style-focus="outline:2px solid var(--clay); outline-offset:3px;">Download the guide</a>
+        <a href="{{ guideHref }}" download="Pre-Approval Guide - Gretza Roman.pdf" style="margin-top:auto; align-self:flex-start; display:inline-flex; align-items:center; justify-content:center; height:52px; padding:0 30px; white-space:nowrap; border-radius:999px; background:var(--deep); color:#ffffff; font-size:13.5px; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; transition:transform .12s, box-shadow .18s, background .18s;" style-hover="background:color-mix(in oklab, var(--deep) 86%, #000); box-shadow:0 12px 26px -14px rgba(40,70,90,0.6); color:#ffffff;" style-active="transform:translateY(1px);" style-focus="outline:2px solid var(--clay); outline-offset:3px;">Download the guide</a>
       </div>
     </section>
 
@@ -78,7 +78,7 @@
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3c5a6b&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#3c5a6b&quot;,&quot;#33505f&quot;,&quot;#4a6b7c&quot;,&quot;#2f4854&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#be8568&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#be8568&quot;,&quot;#c89a80&quot;,&quot;#a9714f&quot;,&quot;#d2a18e&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/romanhomesandloans&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;guideUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/buyers-guide.pdf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;embedCalendly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Links&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#3c5a6b&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#3c5a6b&quot;,&quot;#33505f&quot;,&quot;#4a6b7c&quot;,&quot;#2f4854&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;goldColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#be8568&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#be8568&quot;,&quot;#c89a80&quot;,&quot;#a9714f&quot;,&quot;#d2a18e&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;calendlyUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://calendly.com/romanhomesandloans&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;guideUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;assets/pre-approval-guide.pdf&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;embedCalendly&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Links&quot;}}">
 class Component extends DCLogic {
   state = { firstName: '' };
 
@@ -106,7 +106,7 @@ class Component extends DCLogic {
     return {
       nameSuffix: this.state.firstName ? ', ' + this.state.firstName : '',
       bookHref: cal,
-      guideHref: (this.props.guideUrl || 'assets/buyers-guide.pdf').trim(),
+      guideHref: (this.props.guideUrl || 'assets/pre-approval-guide.pdf').trim(),
       embedSrc: this.props.embedCalendly && /calendly\.com\/.+/.test(cal) ? cal : ''
     };
   }
